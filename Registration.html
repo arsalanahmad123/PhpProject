@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="libraries/animate/animate.css">
+    <title>Bank--Registration Form</title>
+</head>
+
+<body>
+    <div class="registration-container">
+        <i class="fa fa-times fa-3x has-text-danger"></i>
+        <div class="form-container">
+            <h1 class="title has-text-centered p-5 is-fixed">Registration</h1>
+            <form id="multi-step-form" action="create.php" method="POST">
+                <div class="steps">
+                    <div class="step active" id="step1">
+                        <h2 class="title is-5 ">Personal Information</h2>
+                        <div class="field">
+                            <label class="label">First Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Enter your first name" id="first_name"
+                                    name="first_name" autocomplete="off" autofocus>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Last Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Enter your last name" id="last_name"
+                                    name="last_name" autocomplete="off">
+
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Date of Birth</label>
+                            <div class="control">
+                                <input type="date" name="DOB" id="dob" class="input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Gender</label>
+                            <div class="control">
+                                <label class="radio p-2">
+                                    <input type="radio" name="gender" checked value="Male">
+                                    Male
+                                    <i class="fa fa-male"></i>
+                                </label>
+                                <label class="radio p-2">
+                                    <input type="radio" name="gender" value="Female">
+                                    Female
+                                    <i class="fa fa-female"></i>
+                                </label>
+                                <label class="radio p-2">
+                                    <input type="radio" name="gender" value="Other">
+                                    Other
+                                    <i class="fa fa-transgender"></i>
+                                </label>
+
+                            </div>
+                        </div>
+                        <button type="button" class="button next-button is-primary is-pulled-right mt-5">Next</button>
+                    </div>
+
+                    <div class="step " id="step2">
+                        <h2 class="title is-5">Contact Information</h2>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="email" placeholder="Enter your email" name="email" id="email"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Address</label>
+                            <div class="control">
+                                <textarea name="address" id="address" cols="30" rows="3" class="textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Phone</label>
+                            <div class="control">
+                                <input type="number" class="input" name="phone" id="phone" autocomplete="off">
+                            </div>
+                        </div>
+                        <button type="button" class="button is-light previous-button mt-5 ">Previous</button>
+                        <button type="button" class="button  next-button is-primary is-pulled-right mt-5">Next</button>
+                    </div>
+                    <div class="step " id="step3">
+                        <h2 class="title is-5">Identification Details</h2>
+                        <div class="field">
+                            <label class="label">Enter Your CNIC</label>
+                            <div class="control">
+                                <input class="input" placeholder="Enter your 13 digit CNIC" id="cnic" name="cnic"
+                                    autocomplete="off">
+                            </div>
+                        </div>
+                        <button type="button" class="button is-light previous-button mt-5 ">Previous</button>
+                        <button type="button" class="button is-primary next-button is-pulled-right mt-5">Next</button>
+                    </div>
+                    <div class="step " id="step4">
+                        <h2 class="title is-5">Account Information</h2>
+                        <div class="field">
+                            <label class="label">Account Type</label>
+                            <div class="control">
+                                <label class="radio p-2">
+                                    <input type="radio" name="accountType" checked value="Current Account">
+                                    Current Account
+                                    <i class="fa fa-piggy-bank"></i>
+                                </label>
+                                <label class="radio p-2">
+                                    <input type="radio" name="accountType" value="Saving Account">
+                                    Saving Account
+                                    <i class="fa fa-money-check-alt"></i>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="button is-light previous-button mt-5 ">Previous</button>
+                        <button type="button" class="button  next-button is-primary is-pulled-right mt-5">Next</button>
+                    </div>
+                    <div class="step " id="step5">
+                        <h2 class="title is-5">Security And Authentication</h2>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input type="password" name="password" id="password" placeholder="Enter your password"
+                                    class="input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Confirm Password</label>
+                            <div class="control">
+                                <input type="password" name="cpassword" id="cpassword"
+                                    placeholder="Confirm your password" class="input" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Security Question</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select name="security-question" id="security-question">
+                                        <option value="">Select your security question</option>
+                                        <option value="pet">What is your pet name?</option>
+                                        <option value="color">What is your favorite color?</option>
+                                        <option value="food">What is your favorite food?</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field security-answer">
+                            <label class="label">Security Answer</label>
+                            <div class="control">
+                                <input type="text" name="security-answer" id="security-answer"
+                                    placeholder="Enter your security answer" class="input">
+                            </div>
+                        </div>
+                        <button type="button" class="button is-light previous-button mt-5 ">Previous</button>
+                        <button type="button" class="button is-primary next-button is-pulled-right mt-5">Next</button>
+                    </div>
+                    <div class="step " id="step6">
+                        <h2 class="title is-5">Financial Information</h2>
+                        <div class="field">
+                            <label class="label">Source of Income</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select name="source-of-income" id="source-of-income">
+                                        <option value="">Select your source of income</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Job">Job</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field ">
+                            <label class="label">Employement Status</label>
+                            <div class="control">
+                                <div class="select employement-status">
+                                    <select name="employement-status" id="employment-status">
+                                        <option value="">Select your employement status</option>
+                                        <option value="Employed">Employed</option>
+                                        <option value="Unemployed">Unemployed</option>
+                                        <option value="Retired">Retired</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field annual-income-range">
+                            <label class="label">Annual Income Range</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select name="annual-income-range" id="annual-income-range">
+                                        <option value="">Select your annual income range</option>
+                                        <option value="1000000">Less than 1,000,000</option>
+                                        <option value="1000000">1,000,000 - 5,000,000</option>
+                                        <option value="5000000">5,000,000 - 10,000,000</option>
+                                        <option value="10000000">More than 10,000,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="button is-light previous-button mt-5 ">Previous</button>
+                        <button type="submit" class="button is-link next-button is-pulled-right mt-5">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="custom-confirm-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <h1 class="title is-4">Confirmation</h1>
+                <p>Do you really want to cancel Registration?</p>
+            </div>
+            <footer class="modal-card-foot">
+                <button class="button is-danger" id="custom-confirm-yes">Yes</button>
+                <button class="button" id="custom-confirm-no">No</button>
+            </footer>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Registration.js"></script>
+    <script src="js/Validate.js"></script>
+    <script>
+        // JavaScript with jQuery
+        $(document).ready(function () {
+            var modal = $('#custom-confirm-modal');
+
+            // Show modal
+            $('.fa-times').on('click', function () {
+                modal.addClass('is-active');
+            });
+
+            // Close modal when close button or cancel button is clicked
+            $('.modal-close, #custom-confirm-no').on('click', function () {
+                modal.removeClass('is-active');
+            });
+
+            // Handle confirm button click
+            $('#custom-confirm-yes').on('click', function () {
+                window.location.href = "index.php";
+            });
+
+        });
+    </script>
+</body>
+
+</html>
